@@ -181,10 +181,6 @@ class EdgedWeapon(Weapon):
 
 
     def attack(self, obj: LivingObject):
-        """
-        :param obj: LivingObject to attack (target)
-        :return: None
-        """
         d = self.distance(obj)
         if d > self.radius:
             return
@@ -200,10 +196,9 @@ class ThrowingWeapon(Weapon):
 
 
     def throw(self, target_x: int, target_y: int, target_z: int):
-        """
-        Специальная функция для метания метательного оружия в определенном направлении.
-        :return: None if it was too far to throw and True if successfully thrown
-        """
+        #Специальная функция для метания метательного оружия в определенном направлении.
+        # Возвращает True в случае успеха, иначе nome
+        
         point_target = GameObject('point', self._loc,
                                   x=target_x, y=target_y, z=target_z)
 
@@ -236,11 +231,8 @@ class Player(LivingObject):
             return
 
     def attack(self, obj: LivingObject):
-        """
-        Player can use weapon (if he/she have one) to attack
-        :param obj: LivingObject to attack (target)
-        :return: None
-        """
+        #Player может использовать оружие для нанесения урона
+    
         if not self.weapon:
             print(f'{self.name} tried to attack, but has no weapon!')
             return
@@ -249,10 +241,9 @@ class Player(LivingObject):
             self.weapon = None
 
     def throw(self, target_x, target_y, target_z):
-        """
-        Специальная функция для метания метательного оружия в определенном направлении.
-        :return: None
-        """
+
+        #Специальная функция для метания метательного оружия в определенном направлении.
+        
         if not self.weapon:
             print(f'{self.name} tried to attack, but has no weapon!')
             return
