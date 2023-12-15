@@ -31,10 +31,16 @@ def addition(syst_in: int, num1: str, num2: str, syst_out: int) -> str:
 
     return convert_from_decimal(convert_to_decimal(num1, syst_in) +
                                 convert_to_decimal(num2, syst_in), syst_out)
-
+    
+def addition111(syst_in: int, num1: str, num2: str, syst_out: int) -> str:
+    # Числа в одинаковой системе переводятся в другую систему счисления и складываются в ней
+    a = convert_from_decimal(convert_to_decimal(num1, syst_in), syst_out)
+    b = convert_from_decimal(convert_to_decimal(num2, syst_in), syst_out)
+    return a+b
 
 syst_in = 2
 num1 = '1101'
 num2 = '1011'
 syst_out = 10
 print(addition(syst_in, num1, num2, syst_out))
+print(addition111(syst_in, num1, num2, syst_out))
