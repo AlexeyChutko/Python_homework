@@ -17,7 +17,7 @@ def create_counter(alphabet):
 alphabet = "abcdefghijklmnopqrstuvwxyz"
 count_func = create_counter(alphabet)
 
-sequence = input()
+sequence = input().lower()
 statistics = count_func(sequence)
 
 # Вывод статистики
